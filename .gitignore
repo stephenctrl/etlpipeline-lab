@@ -1,0 +1,18 @@
+cat << 'EOF' > .gitignore
+# Airflow execution logs
+logs/
+
+# Data Lake storage (preserve folder, ignore contents)
+datalake/*
+!datalake/.gitkeep
+
+# Python & Environment
+__pycache__/
+*.pyc
+.env
+.venv/
+EOF
+
+# Ensure .gitkeep exists so the datalake folder structure is committed
+mkdir -p datalake
+touch datalake/.gitkeep
